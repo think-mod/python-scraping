@@ -7,9 +7,6 @@ from fake_useragent import UserAgent
 import random
 from lxml import html
  
- 
-#USER_AGENT = {'User-Agent':'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36'}
-
 
 def fetch_results(search_url):
     assert isinstance(search_url, str), 'Search term must be a string'  
@@ -111,34 +108,3 @@ if __name__ == '__main__':
                 print(data)
                 wr = csv.writer(csvfile)
                 wr.writerow(data)
-        
-
-    #print(type(result))
-
-    '''try:
-        results = scrape_atingi('https://atingi.litmoseu.com/admin/people/425078/edit')
-        for result in results:
-            print(result)
-    except Exception as e:
-        print(e)
-
-
-    with open('4yrs&2yrs.csv', newline='') as csvfile:
-        collegeNames = list(csv.reader(csvfile))
-    suffix = ' baseball'
-    collegeNamesFinal = [str(s) + suffix for s in collegeNames]
-    data = []
-    for keyword in collegeNamesFinal:
-        try:
-            results = scrape_google(keyword, 1, "en")
-            for result in results:
-                data.append(result)
-                print(result)
-        except Exception as e:
-            print(e)
-        finally:
-            sleep(5)
-    print('Collected Urls, now writing to csv')
-    with open('masterCollegeUrls.csv', 'w', newline='') as myfile:
-     wr = csv.writer(myfile, quoting=csv.QUOTE_ALL)
-     wr.writerow(data)'''
